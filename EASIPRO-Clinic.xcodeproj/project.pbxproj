@@ -26,6 +26,8 @@
 		D4A414FF209B8FCE0049D681 /* PatientSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A414FB209B8FCE0049D681 /* PatientSectionHeader.swift */; };
 		D4A41501209B90380049D681 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A41500209B90380049D681 /* MainViewController.swift */; };
 		D4A41504209B923F0049D681 /* EP+AssessmentCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A41503209B923F0049D681 /* EP+AssessmentCenter.swift */; };
+		D4A41506209B9F430049D681 /* SwiftFHIR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A41505209B9F430049D681 /* SwiftFHIR.framework */; };
+		D4A41507209B9F430049D681 /* SwiftFHIR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D4A41505209B9F430049D681 /* SwiftFHIR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +39,7 @@
 			files = (
 				D4A414ED209B8EDF0049D681 /* EASIPRO.framework in Embed Frameworks */,
 				D4A414EA209B8EDF0049D681 /* AssessmentCenter.framework in Embed Frameworks */,
+				D4A41507209B9F430049D681 /* SwiftFHIR.framework in Embed Frameworks */,
 				D4A414F3209B8EDF0049D681 /* SMART.framework in Embed Frameworks */,
 				D4A414F0209B8EDF0049D681 /* ResearchKit.framework in Embed Frameworks */,
 			);
@@ -63,6 +66,7 @@
 		D4A414FB209B8FCE0049D681 /* PatientSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientSectionHeader.swift; sourceTree = "<group>"; };
 		D4A41500209B90380049D681 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D4A41503209B923F0049D681 /* EP+AssessmentCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EP+AssessmentCenter.swift"; sourceTree = "<group>"; };
+		D4A41505209B9F430049D681 /* SwiftFHIR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftFHIR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 			files = (
 				D4A414EC209B8EDF0049D681 /* EASIPRO.framework in Frameworks */,
 				D4A414E9209B8EDF0049D681 /* AssessmentCenter.framework in Frameworks */,
+				D4A41506209B9F430049D681 /* SwiftFHIR.framework in Frameworks */,
 				D4A414F2209B8EDF0049D681 /* SMART.framework in Frameworks */,
 				D4A414EF209B8EDF0049D681 /* ResearchKit.framework in Frameworks */,
 			);
@@ -83,6 +88,7 @@
 		D4A414CA209B8E470049D681 = {
 			isa = PBXGroup;
 			children = (
+				D4A41505209B9F430049D681 /* SwiftFHIR.framework */,
 				D4A414F1209B8EDF0049D681 /* SMART.framework */,
 				D4A414EE209B8EDF0049D681 /* ResearchKit.framework */,
 				D4A414EB209B8EDF0049D681 /* EASIPRO.framework */,
