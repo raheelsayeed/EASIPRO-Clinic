@@ -40,6 +40,13 @@ class MainViewController: UITableViewController {
     }
     
     var statusLabel : UILabel?
+    
+    class func Today()->String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .full
+        formatter.timeStyle = .none
+        return formatter.string(from: Date())
+    }
 
 
 
@@ -142,7 +149,7 @@ class MainViewController: UITableViewController {
         let profileBtn = UIBarButtonItem(image: UIImage.init(named: "icons8-male-user-filled-50"), style: .plain, target: self, action: #selector(showProfile))
         let practitionerBtn = UIBarButtonItem(title: "LOGIN", style: .plain, target: self, action: #selector(showProfile))
         navigationItem.rightBarButtonItems = [profileBtn, practitionerBtn]
-        navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "SMART Hospital", style: .plain, target: nil, action: nil)
+        navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: MainViewController.Today(), style: .plain, target: nil, action: nil)
         let flexibleItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         statusLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 40))
         statusLabel?.text = "Ready"
