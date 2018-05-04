@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D4A414D7209B8E470049D681 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A414D6209B8E470049D681 /* AppDelegate.swift */; };
-		D4A414D9209B8E470049D681 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A414D8209B8E470049D681 /* ViewController.swift */; };
 		D4A414DC209B8E470049D681 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4A414DA209B8E470049D681 /* Main.storyboard */; };
 		D4A414DE209B8E470049D681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4A414DD209B8E470049D681 /* Assets.xcassets */; };
 		D4A414E1209B8E470049D681 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4A414DF209B8E470049D681 /* LaunchScreen.storyboard */; };
@@ -28,6 +27,7 @@
 		D4A41504209B923F0049D681 /* EP+AssessmentCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A41503209B923F0049D681 /* EP+AssessmentCenter.swift */; };
 		D4A41506209B9F430049D681 /* SwiftFHIR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A41505209B9F430049D681 /* SwiftFHIR.framework */; };
 		D4A41507209B9F430049D681 /* SwiftFHIR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D4A41505209B9F430049D681 /* SwiftFHIR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D4D30252209BBC6200125855 /* EP+ACConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D30251209BBC6200125855 /* EP+ACConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,7 +51,6 @@
 /* Begin PBXFileReference section */
 		D4A414D3209B8E470049D681 /* EASIPRO-Clinic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EASIPRO-Clinic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A414D6209B8E470049D681 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D4A414D8209B8E470049D681 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D4A414DB209B8E470049D681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4A414DD209B8E470049D681 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4A414E0209B8E470049D681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 		D4A41500209B90380049D681 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D4A41503209B923F0049D681 /* EP+AssessmentCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EP+AssessmentCenter.swift"; sourceTree = "<group>"; };
 		D4A41505209B9F430049D681 /* SwiftFHIR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftFHIR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4D30251209BBC6200125855 /* EP+ACConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EP+ACConfig.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +112,6 @@
 				D4A41502209B921F0049D681 /* Classes */,
 				D4A414F7209B8FCE0049D681 /* Views */,
 				D4A414D6209B8E470049D681 /* AppDelegate.swift */,
-				D4A414D8209B8E470049D681 /* ViewController.swift */,
 				D4A414DA209B8E470049D681 /* Main.storyboard */,
 				D4A414DD209B8E470049D681 /* Assets.xcassets */,
 				D4A414DF209B8E470049D681 /* LaunchScreen.storyboard */,
@@ -137,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				D4A41503209B923F0049D681 /* EP+AssessmentCenter.swift */,
+				D4D30251209BBC6200125855 /* EP+ACConfig.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -218,9 +218,9 @@
 			files = (
 				D4A414FF209B8FCE0049D681 /* PatientSectionHeader.swift in Sources */,
 				D4A414FC209B8FCE0049D681 /* SessionActionView.swift in Sources */,
-				D4A414D9209B8E470049D681 /* ViewController.swift in Sources */,
 				D4A41504209B923F0049D681 /* EP+AssessmentCenter.swift in Sources */,
 				D4A414D7209B8E470049D681 /* AppDelegate.swift in Sources */,
+				D4D30252209BBC6200125855 /* EP+ACConfig.swift in Sources */,
 				D4A41501209B90380049D681 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
