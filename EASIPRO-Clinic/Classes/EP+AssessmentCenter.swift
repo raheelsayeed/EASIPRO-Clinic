@@ -15,8 +15,9 @@ import SMART
 extension AssessmentCenter.ACForm {
 	
 	func proMeasure() -> PROMeasure2 {
-		let title = self.title ?? OID
-		let prom = PROMeasure2(title: title, identifier: OID)
+        let identifier = loinc ?? OID
+		let title = self.title ?? identifier
+		let prom = PROMeasure2(title: title, identifier: identifier)
 		prom.measure = self
 		return prom
 	}
@@ -91,7 +92,7 @@ extension EASIPRO.SessionController2 : ACTaskViewControllerDelegate {
 	func handleCompletion(for form: ACForm, session: SessionItem) {
 		var qr = form.as_FHIRQuestionnaireResponse(with: session.score)!
 		qr["subject"] = ["reference": "Patient/\(patient.id!.string)"]
-		qr["authored"] = "2018-01-17" // todo: change to today
+		qr["authored"] = FHIRDate.today.description
 		do {
 			let qResponse = try QuestionnaireResponse(json: qr)
 			let srv = SMARTManager.shared.client.server
@@ -113,16 +114,9 @@ extension EASIPRO.SessionController2 : ACTaskViewControllerDelegate {
 					print(error)
 				}
 			})
-
-			
 		}
 		catch { //do
 			print(error.localizedDescription)
 		}
-		
-
-
-		
 	}
-		
 }
