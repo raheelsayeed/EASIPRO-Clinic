@@ -12,6 +12,8 @@ import AssessmentCenter
 import ResearchKit
 import SMART
 
+
+
 extension AssessmentCenter.ACForm {
 	
 	func proMeasure() -> PROMeasure2 {
@@ -103,11 +105,7 @@ extension EASIPRO.SessionController2 : ACTaskViewControllerDelegate {
 					let observationFHIR = try Observation(json: observation!)
 					observationFHIR.createAndReturn(SMARTManager.shared.client.server, callback: { (error) in
 						print("Observation:", observationFHIR.id?.string)
-						if let onMeasureCompletion = self?.onMeasureCompletion {
-							DispatchQueue.main.async {
-								onMeasureCompletion(form, nil)
-							}
-						}
+						self?.onMeasureCompletion?(observationFHIR, form.proMeasure())
 					})
 				}
 				catch {
@@ -120,3 +118,5 @@ extension EASIPRO.SessionController2 : ACTaskViewControllerDelegate {
 		}
 	}
 }
+
+

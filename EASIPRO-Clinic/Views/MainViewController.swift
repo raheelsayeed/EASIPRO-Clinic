@@ -59,6 +59,8 @@ class MainViewController: UITableViewController {
 
 
     }
+	
+	
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -168,7 +170,9 @@ class MainViewController: UITableViewController {
             practitionerBarItem?.title = practitioner
         }
         SMARTManager.shared.onPatientSelected = {
-            weakSelf?.patientHeaderView?.setPatient(patient: SMARTManager.shared.patient)
+			DispatchQueue.main.async {
+				weakSelf?.patientHeaderView?.setPatient(patient: SMARTManager.shared.patient)
+			}
         }
     }
     func accessoryView() -> UIButton {
@@ -228,24 +232,22 @@ class MainViewController: UITableViewController {
         let btn : RoundedButton? = sender as? RoundedButton ?? nil
         btn?.busy()
         sessionController = SessionController2(patient:pt, measures: measures, practitioner: practitioner)
-        
-        
-        
-        // Report back to the UI that the session is Complete.
-        sessionController?.onSessionCompletion = { [weak self] result, measures in
-            self?.status = "Session Completed for \(self?.patientName ?? "---")"
-        }
+		
         
         sessionController?.onMeasureCompletion = { [weak self] result, measure in
+
 			
-			if let result = result as? ACForm {
-				let filtered = self?.measures?.filter { $0.identifier == result.OID }.first
+			if let acform = measure?.measure as? ACForm {
+				let filtered = self?.measures?.filter { $0.identifier == (acform.loinc ?? acform.OID) }.first
 				if let idx = filtered {
 					idx.sessionStatus = .completedCurrent
 					self?.status = "Session Completed for \(self?.patientName ?? "---")"
 				}
-				btn?.reset()
-				self?.tableView.reloadData()
+				DispatchQueue.main.async {
+					btn?.reset()
+					self?.tableView.reloadData()
+				}
+
 			}
         }
         
