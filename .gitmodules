@@ -4,3 +4,4 @@
 [submodule "Dependencies/EASIPRO"]
 	path = Dependencies/EASIPRO
 	url = https://github.com/raheelsayeed/EASIPRO.git
+	branch = master
