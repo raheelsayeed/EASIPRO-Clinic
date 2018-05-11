@@ -25,7 +25,7 @@ class MainViewController: UITableViewController {
 	
     weak var patientHeaderView: PatientSectionHeader?
     
-    weak final var btnBeginSession : UIButton?
+    weak final var btnBeginSession : RoundedButton?
 
     var patientName : String? {
         get {
@@ -55,9 +55,6 @@ class MainViewController: UITableViewController {
         tableView.separatorStyle = .singleLine
         setupUI()
         configureCallbacks()
-
-
-
     }
 	
 	
@@ -235,21 +232,21 @@ class MainViewController: UITableViewController {
 		
         
         sessionController?.onMeasureCompletion = { [weak self] result, measure in
-
-			
 			if let acform = measure?.measure as? ACForm {
 				let filtered = self?.measures?.filter { $0.identifier == (acform.loinc ?? acform.OID) }.first
 				if let idx = filtered {
 					idx.sessionStatus = .completedCurrent
 					self?.status = "Session Completed for \(self?.patientName ?? "---")"
 				}
-				DispatchQueue.main.async {
-					btn?.reset()
-					self?.tableView.reloadData()
-				}
-
+				self?.resetOnMainQueue()
 			}
         }
+        
+        sessionController?.onMeasureCancellation = { [weak self] measure in
+            self?.resetOnMainQueue()
+        }
+        
+
         
         sessionController?.prepareSessionContainer { [weak self] (viewController, error) in
             
@@ -260,6 +257,15 @@ class MainViewController: UITableViewController {
             }
             viewController.view.tintColor = UIColor.red
             self?.present(viewController, animated: true, completion: nil)
+        }
+    }
+    
+    // MARK: MISC
+    
+    func resetOnMainQueue() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.btnBeginSession?.reset()
         }
     }
 }
