@@ -80,9 +80,18 @@ extension EASIPRO.SessionController2 : ACTaskViewControllerDelegate {
 	
 	public func assessmentViewController(_ taskViewController: ACTaskViewController, didFinishWith reason: ORKTaskViewControllerFinishReason, error: Error?, tscore: Double?, stderror: Double?, session: SessionItem) {
 		
-		let acform = (taskViewController.task as! ACTask).form
+        let acform = (taskViewController.task as! ACTask).form
 		
-		if reason == .completed { handleCompletion(for: acform, session: session) }
+		if reason == .completed {
+            handleCompletion(for: acform, session: session)
+        }
+        else if reason == .discarded {
+            onMeasureCancellation?(acform.proMeasure())
+        }
+        
+        
+        
+        
 		
 		
 	}
