@@ -52,5 +52,23 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>ASSESSMENTCENTER_ACCESSID</key>
+	<string>$(ASSESSMENTCENTER_ACCESSID)</string>
+	<key>ASSESSMENTCENTER_ACCESSTOKEN</key>
+	<string>$(ASSESSMENTCENTER_ACCESSTOKEN)</string>
+	<key>ASSESSMENTCENTER_BASE_URI</key>
+	<string>$(ASSESSMENTCENTER_BASE_URI)</string>
+	<key>SMART_BASE_URI</key>
+	<string>$(SMART_BASE_URI)</string>
+	<key>SMART_CLIENT_CALLBACK_URI</key>
+	<string>$(SMART_CLIENT_CALLBACK_URI)</string>
+	<key>SMART_SCOPE</key>
+	<string>$(SMART_SCOPE)</string>
+	<key>SMART_CLIENT_ID</key>
+	<string>$(SMART_CLIENT_ID)</string>
+	<key>SMART_CLIENT_NAME</key>
+	<string>$(SMART_CLIENT_NAME)</string>
+	<key>SMART_BASE_HTTP_SCHEMA</key>
+	<string>$(SMART_BASE_HTTP_SCHEMA)</string>
 </dict>
 </plist>

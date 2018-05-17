@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4587A6A20AD215700F34744 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D4587A6920AD215700F34744 /* Config.xcconfig */; };
 		D4A414D7209B8E470049D681 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A414D6209B8E470049D681 /* AppDelegate.swift */; };
 		D4A414DC209B8E470049D681 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4A414DA209B8E470049D681 /* Main.storyboard */; };
 		D4A414DE209B8E470049D681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4A414DD209B8E470049D681 /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D4587A6920AD215700F34744 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		D4A414D3209B8E470049D681 /* EASIPRO-Clinic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EASIPRO-Clinic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A414D6209B8E470049D681 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4A414DB209B8E470049D681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		D4A414CA209B8E470049D681 = {
 			isa = PBXGroup;
 			children = (
+				D4587A6920AD215700F34744 /* Config.xcconfig */,
 				D4A41505209B9F430049D681 /* SwiftFHIR.framework */,
 				D4A414F1209B8EDF0049D681 /* SMART.framework */,
 				D4A414EE209B8EDF0049D681 /* ResearchKit.framework */,
@@ -205,6 +208,7 @@
 				D4A414FE209B8FCE0049D681 /* PatientSectionHeader.xib in Resources */,
 				D4A414DE209B8E470049D681 /* Assets.xcassets in Resources */,
 				D4A414DC209B8E470049D681 /* Main.storyboard in Resources */,
+				D4587A6A20AD215700F34744 /* Config.xcconfig in Resources */,
 				D4A414FD209B8FCE0049D681 /* SessionActionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +253,7 @@
 /* Begin XCBuildConfiguration section */
 		D4A414E3209B8E470049D681 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4587A6920AD215700F34744 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -306,6 +311,7 @@
 		};
 		D4A414E4209B8E470049D681 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4587A6920AD215700F34744 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

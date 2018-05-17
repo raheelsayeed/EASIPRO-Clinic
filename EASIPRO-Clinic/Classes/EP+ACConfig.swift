@@ -24,13 +24,17 @@ extension ACForm {
 
 extension ACClient {
 	
+	/**
+	AssessmentCenter's Credentials taken from Config.xcconfig via App's Info.plist
+	*/
 	public class func NewClient() -> ACClient {
 		
-		let baseURLString = "https://www.assessmentcenter.net/ac_api/2014-01/"
-		let accessID = "9E9A29C1-DD01-49F6-8D15-74338F673394"
-		let accessToken = "517A4833-D8CD-4B00-94EE-252E8E237A43"
-		let client = ACClient(baseURL: URL(string: baseURLString)!, accessIdentifier: accessID, token: accessToken)
-		return client
+		let infoDict = Bundle.main.infoDictionary!
+		let accessID = infoDict["ASSESSMENTCENTER_ACCESSID"] as! String
+		let accessToken = infoDict["ASSESSMENTCENTER_ACCESSTOKEN"] as! String
+		let baseURI = infoDict["ASSESSMENTCENTER_BASE_URI"] as! String
+		return ACClient(baseURL: URL(string: "https://\(baseURI)")!, accessIdentifier: accessID, token: accessToken)
+		
 	}
 	
 }
