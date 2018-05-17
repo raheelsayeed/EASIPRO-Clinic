@@ -8,3 +8,4 @@ xcuserdata
 **.xcscmblueprint
 build
 EP+ACConfig.swift
+Config.xcconfig
