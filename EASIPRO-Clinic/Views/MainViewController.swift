@@ -94,7 +94,7 @@ class MainViewController: UITableViewController {
         patientHeaderView = self.tableView.dequeueReusableHeaderFooterView(withIdentifier: "PatientSectionHeader") as? PatientSectionHeader
         patientHeaderView?.baseViewController = self
         patientHeaderView?.btnMeasures.addTarget(self, action: #selector(selectMeasures(_:)), for: .touchUpInside)
-        patientHeaderView?.btnSession.addTarget(self, action: #selector(showPROHistory(_:)), for: .touchUpInside)
+        patientHeaderView?.btnSession.addTarget(self, action: #selector(selectBatteries(_:)), for: .touchUpInside)
         patientHeaderView?.btnPatient.addTarget(self, action: #selector(selectPatient(_:)), for: .touchUpInside)
         patientHeaderView?.btnHistory.addTarget(self, action: #selector(showPROHistory(_:)), for: .touchUpInside)
         return patientHeaderView
@@ -182,6 +182,11 @@ class MainViewController: UITableViewController {
         btn.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
         btn.contentMode = .center
         return btn
+    }
+    
+    @objc public func selectBatteries(_ sender: RoundedButton) {
+        let batteryViewController = ACBatteriesViewController()
+        present(popUpNavigationController(root: batteryViewController, frame: sender.frame), animated: true, completion: nil)
     }
     
     @objc public func selectMeasures(_ sender: UIButton) {

@@ -23,7 +23,29 @@ extension AssessmentCenter.ACForm {
 		prom.measure = self
 		return prom
 	}
-	
+}
+
+class ACBatteriesViewController: MeasuresViewController {
+    
+    open override func loadQuestionnaires() {
+        self.title = "Batteries"
+        if nil != measures { return }
+        markBusy()
+        let acclient = ACClient.NewClient()
+        acclient.listBatteries { [unowned self] (batteries) in
+            if let batteries = batteries {
+                self._measures = batteries.map({ (battery) -> PROMeasure2 in
+                    let proMeasure = PROMeasure2(title: battery.title!, identifier: battery.OID)
+                    proMeasure.measure = battery
+                    return proMeasure
+                })
+                DispatchQueue.main.async {
+                    self.markStandby()
+                }
+            }
+        }
+
+    }
 }
 
 class ACMeasureViewController : MeasuresViewController {
