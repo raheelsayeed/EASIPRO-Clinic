@@ -119,6 +119,11 @@ class MainViewController: UITableViewController {
         cell.layoutMargins = UIEdgeInsetsMake(0, 100, 0, 100)
         cell.separatorInset = UIEdgeInsetsMake(0, 100, 0, 100)
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
